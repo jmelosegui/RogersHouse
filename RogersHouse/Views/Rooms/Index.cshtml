@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RogerHouse.Domain.Entities.Room>
+@{
+    ViewBag.Title = "Roger's House: Rooms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    The Rooms</h2>
+<div id="roomContent">
+</div>
+@section Gallery{
+    <div class="pp_loading" id="pp_loading" style="display: none;">
+    </div>
+    <div id="pp_next" class="pp_next" style="display: block; right: -50px;">
+    </div>
+    <div id="pp_prev" class="pp_prev" style="display: block; left: -50px;">
+    </div>
+    <div id="pp_thumbContainer">
+        @foreach (var room in Model)
+        {
+            
+            <div class="album">
+                @foreach (var roomPhoto in room.Photos)
+                {
+                    <div class="content">
+                        <img alt="/RoomsPhotos/images/@roomPhoto.FileName" src="/RoomsPhotos/thumbs/@roomPhoto.FileName" />
+                        <span>@room.Name: @roomPhoto.Description</span>
+                    </div>
+                }
+                <div class="descr">
+                    <span><span>
+                        @room.Name
+                    </span></span>
+                </div>
+                <div class="roomdescr" style="display: none">
+                    <h3>@room.Name</h3>
+                    @if (room.Price > 0)
+                    {
+                        <text> 
+                            <b>Price: </b>@room.Price; € @room.PriceDescription<br />
+                        </text>
+                    }
+                    <b>Size: </b>@room.Size sq
+                    <br />
+                    <b>Location: </b>@room.Location
+                    <br />
+                    <br />
+                    <b>Description: </b>
+                    <br />
+                    @Html.Raw(@room.Description)
+                </div>
+            </div>
+        }
+        <div class="pp_back" id="pp_back" style="left: -200px;">
+            <span><span>back rooms</span></span></div>
+    </div>
+}

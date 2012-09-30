@@ -1,0 +1,16 @@
+﻿@model IEnumerable<RogersHouse.WebUI.Models.NavLink>
+
+@{
+    Layout = null;
+}
+<ul id="menu">
+@foreach (var link in Model)
+{   
+    <li>
+        @Html.RouteLink(link.Text, link.RouteValues, new Dictionary<string, object> { { "class", link.IsSelected ? "active" : null } })
+    </li>
+}
+    <li>
+        @Html.RouteLink("The Rooms", new RouteValueDictionary { {"action" , "Index"}, { "controller" , "Rooms" } }, null)
+    </li>
+</ul>

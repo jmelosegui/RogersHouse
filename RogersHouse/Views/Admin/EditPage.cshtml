@@ -1,0 +1,29 @@
+﻿@model RogerHouse.Domain.Entities.Page
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Roger's House: Edit Page (" + Model.Title+ ")";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit Page</h2>
+@Html.ValidationSummary(false)
+@using (Html.BeginForm())
+{    
+    <div>
+        <p>
+            <label for="data_lang_id" title="Select the language of the content you'll going to edit.">
+                Load page in other language:</label>
+            @(Html.Telerik().DropDownList()
+                    .Name("languageId")
+                    .Items(items =>
+                    {
+                        items.Add().Text("English").Value("en").Selected("en" == ViewBag.LanguageId);
+                        items.Add().Text("Dutch").Value("nl").Selected("nl" == ViewBag.LanguageId);
+                    }))
+            <input type="submit" class="button" id="reload" value="&gt;&gt;" title="Cargar los datos" />
+            <br />
+        </p>
+    </div>
+    
+    @Html.Partial("_PageControl")
+}

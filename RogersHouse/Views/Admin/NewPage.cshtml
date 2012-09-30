@@ -1,0 +1,20 @@
+﻿@model RogerHouse.Domain.Entities.Page
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Roger's House: New Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>New Page</h2>
+
+@Html.ValidationSummary(false)
+
+@Html.Partial("_LanguageSelector") 
+
+@using (Html.BeginForm())
+{    
+    @Html.Partial("_PageControl")
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

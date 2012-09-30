@@ -1,0 +1,49 @@
+﻿@model IEnumerable<RogerHouse.Domain.Entities.RoomPhoto>
+@using Telerik.Web.Mvc.UI
+@{
+    ViewBag.Title = "Rooms Photos";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*<script type="text/javascript" src="@Url.Content("~/public/scripts/listEditor.js")"></script>*@
+<div id="roomPhotos">
+    <ul id="photo-list">
+        @foreach (var item in Model)
+        {
+            <li>
+                <img alt="@item.FileName" src="@String.Format("/RoomsPhotos/images/{0}", item.FileName)" style="width:300px; height:200px" />
+                <div class="actionButtons">
+                    @*<span class="editable">@item.Description</span>*@
+                    @Html.ActionLink("Remove", "RemovePhotos", "Admin", new { id = item.PhotoId }, null)
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+<div>
+    @using (Html.BeginForm("SavePhotos", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Hidden("id");
+        <div id="editorRows">
+            <div class="editorRow">
+                <p>
+                    <input type="file" name="photos" id="photo1" accept="jpg" style="width: 100px" />
+                </p>
+            </div>
+        </div>
+        <div>
+            <span>@Html.ActionLink("Add another photo...", "NewInputFileControl", null, new { id = "addItem" })</span>
+        </div>
+        <p>
+            <input type="submit" value="upload" />
+        </p>
+    }
+</div>
+@{Html.Telerik().ScriptRegistrar()
+                .DefaultGroup(group => group
+                .Add("~/public/scripts/listEditor.js"))
+                .Render();}
+<script language="javascript" type="text/javascript">
+    function Save(e, data) {
+        alert(data.Value);
+    }
+</script>

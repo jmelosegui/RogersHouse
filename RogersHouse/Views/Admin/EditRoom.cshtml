@@ -1,0 +1,16 @@
+﻿@model RogerHouse.Domain.Entities.Room
+
+@{
+    ViewBag.Title = "Roger's House: Edit Room (" + Model.Name + ")";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Edit Room</h2>
+
+@Html.ValidationSummary(false)
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("_LanguageSelector")
+    @Html.Partial("_RoomControl")
+}

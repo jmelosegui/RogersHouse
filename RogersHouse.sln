@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogersHouse.WebUI", "RogersHouse\RogersHouse.WebUI.csproj", "{D194202B-9C93-40DF-A7FF-AC17323AF4A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogersHouse.UnitTests", "RogersHouse.Tests\RogersHouse.UnitTests.csproj", "{ABC24073-BC76-4254-9F0B-3A0E33C88E61}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RogerHouse.Database", "RogerHouse.Database\RogerHouse.Database.sqlproj", "{F640B6C9-2D01-49E8-A0D0-D312C781962E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogerHouse.Domain", "RogerHouse.Domain\RogerHouse.Domain.csproj", "{45DDCE75-9371-48DA-8AB5-A9BA95CEC63F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{88182B2F-0964-45D2-9C25-F63196DA6D32}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "RogerHouse.Cloud", "RogerHouse.Cloud\RogerHouse.Cloud.ccproj", "{3AB88BB4-C379-47AC-8960-19A514A0BD18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D194202B-9C93-40DF-A7FF-AC17323AF4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D194202B-9C93-40DF-A7FF-AC17323AF4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D194202B-9C93-40DF-A7FF-AC17323AF4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D194202B-9C93-40DF-A7FF-AC17323AF4A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABC24073-BC76-4254-9F0B-3A0E33C88E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABC24073-BC76-4254-9F0B-3A0E33C88E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABC24073-BC76-4254-9F0B-3A0E33C88E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABC24073-BC76-4254-9F0B-3A0E33C88E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F640B6C9-2D01-49E8-A0D0-D312C781962E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F640B6C9-2D01-49E8-A0D0-D312C781962E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F640B6C9-2D01-49E8-A0D0-D312C781962E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F640B6C9-2D01-49E8-A0D0-D312C781962E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F640B6C9-2D01-49E8-A0D0-D312C781962E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{45DDCE75-9371-48DA-8AB5-A9BA95CEC63F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DDCE75-9371-48DA-8AB5-A9BA95CEC63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DDCE75-9371-48DA-8AB5-A9BA95CEC63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DDCE75-9371-48DA-8AB5-A9BA95CEC63F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB88BB4-C379-47AC-8960-19A514A0BD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB88BB4-C379-47AC-8960-19A514A0BD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB88BB4-C379-47AC-8960-19A514A0BD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB88BB4-C379-47AC-8960-19A514A0BD18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ABC24073-BC76-4254-9F0B-3A0E33C88E61} = {88182B2F-0964-45D2-9C25-F63196DA6D32}
+	EndGlobalSection
+EndGlobal

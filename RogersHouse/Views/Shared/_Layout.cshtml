@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html class="cufon-active cufon-ready">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/public/content/reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/public/content/layout.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/public/content/style.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/public/scripts/jquery/jquery-1.5.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/public/scripts/cufon/cufon-yui.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/public/scripts/cufon/cufon-replace.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/public/scripts/cufon/Hattori_Hanzo_300.font.js")" type="text/javascript" ></script>
+    <script src="@Url.Content("~/public/scripts/cufon/Honey_Script_300.font.js")" type="text/javascript" ></script>
+    <!--[if lt IE 9]>
+       <script src="@Url.Content("~/public/scripts/noMoreIE6.js")" type="text/javascript"></script>
+       <script src="@Url.Content("~/public/scripts/html5.js")" type="text/javascript"></script>
+    <![endif]-->
+    <script src="@Url.Content("~/public/scripts/jquery/jquery.transform-0.8.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/public/scripts/script_Photobar.js")" type="text/javascript" ></script>
+</head>
+<body>
+    <div class="extra">
+        <div class="main">
+            <header>
+            <nav>
+                @{Html.RenderAction("Menu", "Nav");}
+            </nav>
+            <h1>
+                <div id="logo">
+                    <span>Roger's house</span>
+                </div>
+            </h1>
+        </header>
+            <article id="content">
+            <section class="body">
+					<div class="box_top_left"><div class="box_top_right"><div class="box_top"></div></div></div>
+					<div class="box">
+						<div  class="pad_left1 pad_right1">
+							 @RenderBody()
+						</div>	
+                        @*@if (User.Identity.IsAuthenticated)
+                        {
+                           <div  class="pad_left1 pad_right1">
+							 @Html.ActionLink("Edit Page", "EditPage", "Admin", new { path = Model.Path.TrimStart('/') }, null)
+						</div>	  
+                        }*@
+					</div>
+					<div class="box_bot_left"><div class="box_bot_right"><div class="box_top"></div></div></div>
+				</section>
+            </article>
+        </div>
+        <div class="block">
+        </div>
+    </div>
+    <footer style="position: relative;">
+        <div class="main">
+        <div id="pp_gallery" class="pp_gallery">@RenderSection("Gallery", false)</div>			    
+           </div>
+            <div class="bg1">
+                <div class="main">
+                    <span class="left">@Html.ActionLink("Admin Zone", "Index", "Admin", null, null)</span>
+					<span class="right">© 2011  &nbsp;|&nbsp;  <a href="#page4">Privacy policy</a></span>
+				</div>
+            </div>
+        </footer>
+    <noscript>
+        <div id="noscript-warning">
+            This site works best with JavaScript enabled<img class="dno" alt="" src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif"></div>
+    </noscript>
+    <script type="text/javascript">        Cufon.now(); </script>
+</body>
+</html>

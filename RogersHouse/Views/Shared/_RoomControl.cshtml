@@ -1,0 +1,78 @@
+﻿@model RogerHouse.Domain.Entities.Room
+@using Telerik.Web.Mvc.UI
+<script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.RoomId)
+    <p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name):
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Name, new { style = "width:580px" })
+            @Html.ValidationMessageFor(model => model.Name, "*")
+        </div>
+    </p>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Price):
+    </div>
+    <div class="editor-field">
+        @(Html.Telerik().CurrencyTextBox()
+                           .Name("Price")
+                           .MinValue(0)
+                           .Spinners(false)
+                           .Value(Model.Price))
+        @Html.ValidationMessageFor(model => model.Price, "*")
+    </div>
+    <p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PriceDescription):
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PriceDescription, new { style = "width:580px" })
+            @Html.ValidationMessageFor(model => model.PriceDescription, "*")
+        </div>
+    </p>
+    <p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Size):
+        </div>
+        <div class="editor-field">
+            @(Html.Telerik().IntegerTextBox()
+                           .Name("Size")
+                           .MinValue(0)
+                           .Spinners(false)
+                           .Value(Model.Size))
+            @Html.ValidationMessageFor(model => model.Size, "*")
+        </div>
+    </p>
+    <p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Location):
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Location, new { style = "width:580px" })
+            @Html.ValidationMessageFor(model => model.Location, "*")
+        </div>
+    </p>
+    <p>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description):
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.Description, "*")
+            @(Html.Telerik().Editor()
+                            .Name("Description")
+                            .HtmlAttributes(new { style = "height:350px;" })
+                            .Value(Model.Description))
+        </div>
+    </p>
+    
+    <p>
+        <input type="submit" value="Save" />
+        | @Html.ActionLink("Back to List", "Rooms")
+    </p>
+}
+@{ Html.Telerik().ScriptRegistrar().Globalization(true); }

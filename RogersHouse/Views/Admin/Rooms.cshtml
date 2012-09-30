@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RogerHouse.Domain.Entities.Room>
+@{
+    ViewBag.Title = "Rooms";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    Rooms</h2>
+<p>
+    @Html.ActionLink("Create New", "NewRoom")
+</p>
+<table style="width: 100%">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Price (€)
+        </th>
+        <th>
+            Price Description
+        </th>
+        <th>
+            Size (sq)
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="text-align: right">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td style="padding-left: 15px;">
+                @Html.DisplayFor(modelItem => item.PriceDescription)
+            </td>
+            <td style="text-align: right">
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td style="padding-left: 15px;">
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Manage Photos", "RoomPhotos", new { id = item.RoomId }) |
+                @Html.ActionLink("Edit", "EditRoom", new { id = item.RoomId }) |
+                @Html.ActionLink("Delete", "DeleteRoom", new { id = item.RoomId })
+            </td>
+        </tr>
+    }
+</table>

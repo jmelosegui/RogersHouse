@@ -1,0 +1,138 @@
+﻿
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video{ display: block; }
+mark, rp, rt, ruby, summary, time{ display: inline }
+
+/* Left & Right alignment */
+
+.left { float:left;}
+.right { float:right;}
+.wrapper {width:100%; overflow:hidden;}
+
+/* Global properties ======================================================== */
+
+body{ background: url(../../public/images/bg_img.jpg) top center no-repeat; border:0; font:12px Arial, Helvetica, sans-serif; color:#424040; line-height:20px;}
+
+.block {height:261px;}
+.extra {min-height:100%; height:auto !important;  height:100%; margin: 0 auto -261px;}
+body, html {height:100%; overflow-x:hidden}
+
+.bg1{ background: url(../../public/images/bg_footer.png) top repeat-x; height:50px; position:relative; z-index:3; padding-top:11px;}
+
+/* Global Structure ============================================================= */
+
+.main {	margin: 0 auto;	width:880px; position:relative}
+
+
+/* ============================= main layout ====================== */
+
+a{ color:#424040; text-decoration: underline; outline:none}
+a:hover{ text-decoration: none}
+h1{ text-align:center; padding:20px 0 0 0; width:100%;}
+h2{ font:22px Arial, Helvetica, sans-serif; color:#dd480a; text-transform:uppercase; line-height:30px; padding:24px 0 9px 0;}
+h3{ font:14px Arial, Helvetica, sans-serif; color:#dd480a; text-transform:uppercase; padding:0 0 9px 0;}
+p{ padding-bottom:20px;}
+
+/* ============================= header ====================== */
+header{}
+
+#logo{ text-indent:-5000px; background:url(../../public/images/logo.png) no-repeat; display: inline-table;}
+#logo span{ width:439px; height:70px; display:block; cursor:pointer} 
+
+#menu {padding:23px 0 0 0; width:100%; overflow:hidden; text-align:center}
+#menu li { display: inline; padding-right:23px; background:url(../../public/images/menu_line.png) right center no-repeat; margin-right:13px; line-height:56px; height:56px}
+#menu .no_bg{ background:none; padding:0; margin:0;}
+#menu li a{ display: inline-block; font-size:23px; color:#766e69; text-transform:uppercase; text-decoration:none;}
+#menu li a:hover, #menu li a.active{ background:url(../../public/images/menu_bg_active.png) top center no-repeat;}
+
+
+/* ============================= content ====================== */
+
+#content{ position:absolute; top:190px; width:100%; overflow: hidden;}
+.pad_left1{ padding-left:60px;}
+.pad_right1{ padding-right:60px;}
+
+.marg_left1{ margin-left:20px;}
+.marg_right1{ margin-right:20px;}
+
+.box{ min-height:350px; background:#fff;}
+
+.box_top_left{ background:url(../../public/images/box2_top_left.png) top left no-repeat; font-size:0; line-height:0;}
+.box_top_right{ background:url(../../public/images/box2_top_right.png) top right no-repeat}
+.box_top{ background:#fff; margin:0 10px; height:10px;}
+
+.box_bot_left{ background:url(../../public/images/box2_bot_left.png) bottom left no-repeat; font-size:0; line-height:0;}
+.box_bot_right{ background:url(../../public/images/box2_bot_right.png) bottom right no-repeat}
+
+
+/* ------------------- gallery ------------------------*/
+
+#pp_gallery{ position:relative; height:200px;}
+.pp_loading{	display:none;	position:fixed;	top:50%;	left:50%;	margin:-35px 0px 0px -35px;	background:#fff url(../../public/images/loader.gif) no-repeat center center;	width:70px;	height:70px;	z-index:999;	opacity:0.7;	-moz-border-radius:10px;	-webkit-border-radius:10px;	border-radius:10px;behavior: url(js/PIE.htc);}
+.pp_next, .pp_prev{	cursor:pointer;	top:50%;	margin-top:-18px;	width:46px;	height:37px;	position:fixed;}
+.pp_next{	right:-50px;	background: url(../../public/images/marker_right.png) 0 0 no-repeat;}
+.pp_prev{	left:-50px;	background: url(../../public/images/marker_left.png) top right no-repeat;}
+#pp_thumbContainer{	position:fixed;	bottom:55px;	left:0px;	height:200px;	width:200px;}
+#pp_thumbContainer .album{	position:absolute;	width:100%;	height:110px;	bottom:0px;}
+.album .descr, .pp_back{	position:absolute;	bottom:0px; margin:0 -20px;	background: url(../../public/images/box_left.png) top left no-repeat;	text-align:center;	cursor:pointer;width:170px;	color:#000; text-transform:uppercase;cursor:pointer; font-size:14px; line-height:30px}
+.album .descr span, .pp_back span{ display:block; background:url(../../public/images/box_right.png) top right no-repeat}
+.album .descr span span, .pp_back span span{ background:url(../../public/images/box_bg.png) top repeat-x; margin:0 12px; padding-top:6px }
+.pp_back{	text-transform:uppercase;	bottom:0px;	left:-135px;	width:160px;}
+#pp_thumbContainer .content{	position:absolute;	top:0px;	height:200px;	cursor:pointer;line-height:50px;}
+#pp_thumbContainer img{	border:5px solid #fff;	-moz-box-shadow:1px 1px 7px #000;	-webkit-box-shadow:1px 1px 7px #000;	box-shadow:1px 1px 7px #000;}
+#pp_thumbContainer .content span{	display:none;}
+.pp_preview{	position:fixed;	top:150%;	left:50%;}
+.pp_preview img{	position:absolute;	top:0px;	left:0px; height:300px;	border:5px solid #fff;	border-bottom:50px solid #fff;	-moz-box-shadow:1px 1px 7px #000;	-webkit-box-shadow:1px 1px 7px #000;	box-shadow:1px 1px 7px #000;behavior: url(js/PIE.htc);}
+.pp_descr{	height:50px;	line-height:50px;	font-size:30px;	width:100%;	bottom:0px;	left:15px;	position:absolute;	color:#818080;}
+
+/* ============================= footer ====================== */
+
+footer { height:261px; font-size:10px; font-weight:bold; color:#776f6a; line-height:26px}
+footer a{ color:#776f6a}
+footer a:hover{}
+
+/* ============================= forms ============================= */
+
+form {}
+form a{ margin-left:28px; margin-top:10px;}
+form .input {width:266px; height:14px; border:1px solid #b9b9b9; background:#fff; padding:6px; margin-bottom:3px;color:#424040; font:12px Arial, Helvetica, sans-serif;}
+form textarea { overflow: auto;width:266px; height:84px; border:1px solid #b9b9b9; background:#fff; padding:6px; margin-bottom:3px;color:#424040; font:12px Arial, Helvetica, sans-serif;}
+
+#noscript-warning {
+  background-color: #AE0000;
+  color: #FFFFFF;
+  font-family: sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  left: 0;
+  padding: 5px 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}

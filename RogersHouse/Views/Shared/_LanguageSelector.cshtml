@@ -1,0 +1,17 @@
+﻿@using Telerik.Web.Mvc.UI
+<div>
+    <p>
+        <label for="data_lang_id" title="Select the language of the content you'll going to edit.">
+            Load page in other language:</label>
+        @(Html.Telerik().DropDownList()
+                    .Name("languageId")
+                    .Items(items =>
+                    {
+                        items.Add().Text("English").Value("en").Selected("en" == ViewBag.LanguageId);
+                        items.Add().Text("Detuch").Value("nl").Selected("nl" == ViewBag.LanguageId);
+                    }))
+        <input type="submit" class="button" name="languageSelector" id="reload" value="&gt;&gt;"
+            title="Load data" />
+        <br />
+    </p>
+</div>

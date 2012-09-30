@@ -1,0 +1,51 @@
+﻿@using Telerik.Web.Mvc.UI
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/public/content/adminstyles.css")" rel="stylesheet" type="text/css" />
+    @(Html.Telerik().StyleSheetRegistrar()
+                      .DefaultGroup(group => group
+                          .Add("telerik.common.css")
+                          .Add("telerik.office2007.css")
+                          .UseTelerikContentDeliveryNetwork(true)
+                          .Combined(true)
+                          .Compress(true)
+                             )
+                       )
+</head>
+<body>
+    <div>
+        @if (TempData["message"] != null)
+        {
+            <div>@TempData["message"]</div>
+        }
+        <div id="header">
+            <div class="title">
+                Admin Zone</div>
+        </div>
+        <div id="menu">
+            <ul id="menu">
+                <li>@Html.ActionLink("Home", "Index", "Home") </li>
+                <li>@Html.ActionLink("Pages", "Pages") </li>
+                <li>@Html.ActionLink("Rooms", "Rooms") </li>
+                <li>@Html.ActionLink("Log Out", "LogOff", "Account") </li>
+            </ul>
+        </div>
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">
+            This site works best with JavaScript enabled<img class="dno" alt="" src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif"></div>
+    </noscript>
+    @( Html.Telerik().ScriptRegistrar()
+                     .DefaultGroup(group => group
+                     .Compress(true)
+                     .Combined(true)
+                     .UseTelerikContentDeliveryNetwork(true))
+     )
+</body>
+</html>

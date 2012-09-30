@@ -1,0 +1,35 @@
+﻿@model RogerHouse.Domain.Entities.Page
+@{
+    ViewBag.Title = "Roger's House: " + Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@Model.Title</h2>
+<div class="wrapper">
+    @if (Model.Title.ToLower() == "contact us")
+    {        
+        <article class="col1">
+            @Html.Raw(Model.Body)           
+        </article>
+        <article class="col1 marg_left1"> 
+        <form id="ContactForm" action=""> 
+            <div> 
+                <input class="input" type="text" value="Name:" onblur="if(this.value=='') this.value='Name:'" onfocus="if(this.value =='Name:' ) this.value=''"/> 
+                <input class="input" type="text" value="E-mail:" onblur="if(this.value=='') this.value='E-mail:'" onfocus="if(this.value =='E-mail:' ) this.value=''"/> 
+                <textarea cols="1" rows="1" onblur="if(this.value=='') this.value='Message:'" onfocus="if(this.value =='Message:' ) this.value=''">Message:</textarea>
+                <div>
+                    <a href="#" onclick="document.getElementById('ContactForm').submit()">
+                        <strong>submit</strong>
+                    </a>
+                    <a href="#" onclick="document.getElementById('ContactForm').reset()">
+                        <strong>reset</strong>
+                    </a>
+                </div>
+            </div>
+        </form> 
+    </article> 
+    }
+    else
+    {
+        @Html.Raw(Model.Body)
+    }
+</div>
