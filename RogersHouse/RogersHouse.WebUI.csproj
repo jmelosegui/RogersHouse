@@ -533,6 +533,12 @@
     <Content Include="Content\2012.2.607\Windows7\slider-v.gif" />
     <Content Include="Content\2012.2.607\Windows7\sprite-vertical.png" />
     <Content Include="Content\2012.2.607\Windows7\sprite.png" />
+    <Content Include="public\images\box2_bot_left.png" />
+    <Content Include="public\images\box2_bot_right.png" />
+    <Content Include="public\images\box2_top_left.png" />
+    <Content Include="public\images\box2_top_right.png" />
+    <Content Include="public\images\logo.png" />
+    <Content Include="public\images\logo2.png" />
     <Content Include="public\scripts\jquery\jquery.transform-0.8.0.min.js" />
     <Content Include="public\scripts\listEditor.js" />
     <Content Include="public\scripts\noMoreIE6.js" />
@@ -945,6 +951,9 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>EditorLocalization.bg-BG.designer.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="public\images\JoseLogo.psd" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
